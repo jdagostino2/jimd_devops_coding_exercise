@@ -1,0 +1,45 @@
+{
+  "name": "post",
+  "description": "Installs/Configures Java and ElasticSearch on EC2 Node",
+  "long_description": "Installs/Configures Java and ElasticSearch",
+  "maintainer": "Jim DAgostino",
+  "maintainer_email": "jdagostino2@example.com",
+  "license": "All Rights Reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "elasticsearch": ">= 2.0.0",
+    "java": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": "",
+  "privacy": false,
+  "chef_versions": [
+    [
+      ">= 12.1"
+    ]
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}
