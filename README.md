@@ -115,3 +115,4 @@ There has been a few times that the **sgadmin_config.sh** script doesn't run and
 ## Feedback
 
  - I did want to get to the 3 node cluster "Extra Credit" task, but due to time limitations due to travel this past weekend I am not able to complete that at this time. The nodes are configured to install the discovery-ec2 during their bootstrap, so finishing up the config will not take much longer.
+ - I would have also planned to setup unit tests given more time.
