@@ -1,4 +1,6 @@
 # This is the internal user database
 # The hash value is a bcrypt hash and can be generated with plugin/tools/hash.sh
+# This file updated so the password is a known secure password.
+
 admin:
   hash: $2a$12$ZeSyFyeFFVjyjrDyQqQGIe6RfNgkPsgSaWrFjV/P5lkcpQWTk9Ao2
