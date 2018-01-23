@@ -13,6 +13,7 @@ The following items are performed during the chef convergence:
 
 # Prerequisites
 Before getting started you will need to configure your workspace with following applications and configurations.
+
 **Required Software**
  - [Chef Development Kit](https://downloads.chef.io/chefdk).
  - [AWS Command Line Interface](https://aws.amazon.com/cli/).
@@ -30,12 +31,12 @@ Private key must be mode 400.
 >     salsify-elastic.pem	   salsify-elastic.pub
 - AWS Keypair added to default runbook.
 >    vim cookbooks/provision/recipes/default.rb
->    key_name: "salsify-elastic",
->    key_path: "~/.chef/keys/salsify-elastic.pem",
+>      key_name: "salsify-elastic",
+>      key_path: "~/.chef/keys/salsify-elastic.pem",
 - Local copy of git repo.
 > git clone git@github.com:jdagostino2/jimd_devops_coding_exercise.git
-- Chef client.rb configuration.
->     $ cat .chef/client.rb
+- Chef knife.rb configuration.
+>     $ cat .chef/knife.rb
 >     #General
 >     current_dir = File.dirname(__FILE__)
 >     log_level                :info
@@ -60,8 +61,9 @@ Once all the Prerequisites have been met you're ready to build your machines.
 >     machine 'elasticnode1' do  
 >     run_list ['provision::elastic']
 >     end
- - Run the Chef-Client in local mode inputing the provision recipe.
->     sudo chef-client -z -r 'recipe[provision]' --listen Starting Chef
+ - Run the Chef-Client in local mode inputing the provision recipe. (--listen is required)
+>     sudo chef-client -z -r 'recipe[provision]' --listen
+>        Starting Chef
 >        Client, version 13.6.4 resolving cookbooks for run list: ["provision"]
 >        Synchronizing Cookbooks: {OUTPUT CUT} [2018-01-23T00:59:58-05:00]
 >        INFO: Chef Run complete in 99.91546 seconds
