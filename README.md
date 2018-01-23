@@ -35,7 +35,7 @@ Private key must be mode 400.
 - Local copy of git repo.
 > git clone git@github.com:jdagostino2/jimd_devops_coding_exercise.git
 - Chef client.rb configuration.
-> $ cat .chef/client.rb
+>     $ cat .chef/client.rb
 >     #General
 >     current_dir = File.dirname(__FILE__)
 >     log_level                :info
