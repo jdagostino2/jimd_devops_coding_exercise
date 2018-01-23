@@ -92,7 +92,12 @@ Once the systems are fully provisioned and converged you will be able to validat
 >       "remote_address" : "98.118.89.189:52410", 		
 >       {OUTPUT CUT}
 >     }
+
+- Check all systems tagged as app:elastic_search.
+>     for i in `aws ec2 describe-instances --filters "Name=tag:app,Values=elastic_search" --query "Reservations[*].Instances[*].PublicIpAddress" --output=text`; do curl --insecure -u admin:PASS "https://${i}:9200/_searchguard/authinfo?pretty"; done
+
 **NOTE : NOTE : NOTE **
+
 There has been a few times that the **sgadmin_config.sh** script doesn't run and results in Search Guard not being fully configured. To resolve this run the following command (fix filter if needed)
  >  for i in `aws ec2 describe-instances --filters "Name=tag:app,Values=elastic_search" --query "Reservations[*].Instances[*].PublicIpAddress" --output=text`; do ssh -o StrictHostKeyChecking=no -i ~/.chef/keys/salsify-elastic-pub.pem ec2-user@$i /home/ec2-user/sgadmin_config.sh; done
 
