@@ -29,11 +29,11 @@ Private key must be mode 400.
 >     $ ls ~/.chef/keys/
 >     salsify-elastic.pem	   salsify-elastic.pub
 - AWS Keypair added to default runbook.
-> vim cookbooks/provision/recipes/default.rb
+>    vim cookbooks/provision/recipes/default.rb
 >    key_name: "salsify-elastic",
 >    key_path: "~/.chef/keys/salsify-elastic.pem",
 - Local copy of git repo.
-    git clone git@github.com:jdagostino2/jimd_devops_coding_exercise.git
+> git clone git@github.com:jdagostino2/jimd_devops_coding_exercise.git
 - Chef client.rb configuration.
 > $ cat .chef/client.rb
 >     #General
@@ -56,15 +56,15 @@ Once all the Prerequisites have been met you're ready to build your machines.
 
  1. Edit the topo.rb file if you wish to change the default number of systems to build (default: 2).
 
-> $ vim cookbooks/provision/recipes/topo.rb
-> machine 'elasticnode1' do  
-> run_list ['provision::elastic']
-> end
+>     $ vim cookbooks/provision/recipes/topo.rb
+>     machine 'elasticnode1' do  
+>     run_list ['provision::elastic']
+>     end
  - Run the Chef-Client in local mode inputing the provision recipe.
-> sudo chef-client -z -r 'recipe[provision]' --listen Starting Chef
-> Client, version 13.6.4 resolving cookbooks for run list: ["provision"]
-> Synchronizing Cookbooks: {OUTPUT CUT} [2018-01-23T00:59:58-05:00]
-> INFO: Chef Run complete in 99.91546 seconds
+>     sudo chef-client -z -r 'recipe[provision]' --listen Starting Chef
+>        Client, version 13.6.4 resolving cookbooks for run list: ["provision"]
+>        Synchronizing Cookbooks: {OUTPUT CUT} [2018-01-23T00:59:58-05:00]
+>        INFO: Chef Run complete in 99.91546 seconds
 ## Validate Systems
 Once the systems are fully provisioned and converged you will be able to validate that elasticsearch is working by running the following example CURLs.
 
@@ -107,4 +107,4 @@ There has been a few times that the **sgadmin_config.sh** script doesn't run and
 
 ## Feedback
 
- - I did want to get to the 3 node cluster "Extra Credit" task, but due to time limitations due to travel this past weekend I am not able to complete that at this time. The nodes are configured to install the discovery-ec2 during their bootstrap, so finishing up the config will no take much longer.
+ - I did want to get to the 3 node cluster "Extra Credit" task, but due to time limitations due to travel this past weekend I am not able to complete that at this time. The nodes are configured to install the discovery-ec2 during their bootstrap, so finishing up the config will not take much longer.
