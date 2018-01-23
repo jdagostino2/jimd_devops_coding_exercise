@@ -13,7 +13,7 @@
 .chef/*.pem
 .chef/encrypted_data_bag_secret
 .jim-notes.txt
-
+data_bags
 ## Ignore Chef-Zero files
 clients
 nodes
