@@ -93,8 +93,8 @@ Once the systems are fully provisioned and converged you will be able to validat
 >       {OUTPUT CUT}
 >     }
 **NOTE : NOTE : NOTE **
-There has been a few times that the **sgadmin_config.sh** script doesn't run and results in Search Guard not being fully configured. To resolve this run the following command:
- >  ssh -i ~/.chef/keys/your-key.pem ec2-user@ipaddress /home/ec2-user/sgadmin_config.sh
+There has been a few times that the **sgadmin_config.sh** script doesn't run and results in Search Guard not being fully configured. To resolve this run the following command (fix filter if needed)
+ >  for i in `aws ec2 describe-instances --filters "Name=tag:app,Values=elastic_search" --query "Reservations[*].Instances[*].PublicIpAddress" --output=text`; do ssh -o StrictHostKeyChecking=no -i ~/.chef/keys/salsify-elastic-pub.pem ec2-user@$i /home/ec2-user/sgadmin_config.sh; done
 
 ## Resources
 **Public Cookbooks**
