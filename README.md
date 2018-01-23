@@ -70,16 +70,16 @@ Once the systems are fully provisioned and converged you will be able to validat
 
 *NOTE:  The default admin password has been changed. Please email JDAgostino2@gmail.com if you need the default password. The password can always be changed in the **sg_internal_users.yml** file.*
  - Check Cluster Health.
->  $ curl --insecure -u admin:PASS 'https://ipaddress:9200/_cluster/health?pretty'
->  {   
->    "cluster_name" : "salsify-cluster01",   
->    "status" : "green",   
->    "timed_out" : false,  
->    "number_of_nodes" : 1,   
->    "number_of_data_nodes" : 1,  
->    "active_primary_shards" : 1,   
->    {OUTPUT CUT}
->  }
+>     $ curl --insecure -u admin:PASS 'https://ipaddress:9200/_cluster/health?pretty'
+>     {   
+>       "cluster_name" : "salsify-cluster01",   
+>       "status" : "green",   
+>       "timed_out" : false,  
+>       "number_of_nodes" : 1,   
+>       "number_of_data_nodes" : 1,  
+>       "active_primary_shards" : 1,   
+>       {OUTPUT CUT}
+>     }
 
  - Check that Search Guard is up and running.
 >      $ curl --insecure -u admin:PASS 'https://ipaddress:9200/_searchguard/authinfo?pretty'
